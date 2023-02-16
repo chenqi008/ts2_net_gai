@@ -443,7 +443,7 @@ class CLIP4Clip(CLIP4ClipPreTrainedModel):
         frame_embedding_index = torch.arange(start=0, end=visual_output.shape[1], step=expand_times, dtype=torch.long,
                                                         device=visual_output.device)
         visual_output = visual_output[:, frame_embedding_index, :]
-        visual_output_original = visual_output_original[:, frame_embedding_index, :]
+        # visual_output_original = visual_output_original[:, frame_embedding_index, :]
         video_mask = video_mask[:, frame_embedding_index]
         #########################################################
         # video mask need to change due to more tokens in frame #
